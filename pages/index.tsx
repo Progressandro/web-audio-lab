@@ -25,6 +25,10 @@ const contents: Content[] = [
     title: 'Visualizing Waveforms',
     url: 'visualizing-waveforms',
   },
+  {
+    title: 'Meter',
+    url: 'meter',
+  },
 ]
 const Home: NextPage = () => {
   const { t } = useTranslation('common')
