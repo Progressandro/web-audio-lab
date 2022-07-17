@@ -21,6 +21,10 @@ const contents: Content[] = [
     title: 'Gain Node',
     url: 'gainNode',
   },
+  {
+    title: 'Visualizing Waveforms',
+    url: 'visualizing-waveforms',
+  },
 ]
 const Home: NextPage = () => {
   const { t } = useTranslation('common')
