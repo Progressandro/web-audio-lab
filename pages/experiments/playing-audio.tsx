@@ -23,7 +23,10 @@ export async function getStaticProps({
 }: GetStaticProps & { locale: string }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['experiments_playing-audio'])),
+      ...(await serverSideTranslations(locale, [
+        'experiments_playing-audio',
+        'common',
+      ])),
       // Will be passed to the page component as props
     },
   }
