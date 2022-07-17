@@ -16,7 +16,7 @@ function SoundPlayer({ src }: SoundPlayerProps) {
 
   const setup = useCallback<SketchProps['setup']>(
     (p5, canvasParentRef) => {
-      const cnv = p5.createCanvas(500, 500).parent(canvasParentRef)
+      const cnv = p5.createCanvas(p5.windowWidth, 500).parent(canvasParentRef)
       cnv.mousePressed(() => {
         if (!audioContext.current) {
           // setup our audio
@@ -78,6 +78,13 @@ function SoundPlayer({ src }: SoundPlayerProps) {
     }
   }, [])
 
+  const resizeCanvas = useCallback<Required<SketchProps>['windowResized']>(
+    (p5) => {
+      p5.resizeCanvas(p5.windowWidth, 500)
+    },
+    []
+  )
+
   useEffect(() => {
     return () => {
       audio.current?.pause()
@@ -87,7 +94,7 @@ function SoundPlayer({ src }: SoundPlayerProps) {
     }
   }, [])
 
-  return <Sketch setup={setup} draw={draw} />
+  return <Sketch setup={setup} draw={draw} windowResized={resizeCanvas} />
 }
 
 export default SoundPlayer

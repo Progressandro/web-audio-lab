@@ -38,7 +38,7 @@ function BufferedSoundPlayer({ src }: BufferedSoundPlayerProps) {
 
   const setup = useCallback<SketchProps['setup']>(
     (p5, canvasParentRef) => {
-      const cnv = p5.createCanvas(500, 500).parent(canvasParentRef)
+      const cnv = p5.createCanvas(p5.windowWidth, 500).parent(canvasParentRef)
       cnv.mousePressed(() => {
         playSound()
       })

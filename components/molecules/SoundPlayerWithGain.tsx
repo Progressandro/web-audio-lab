@@ -17,7 +17,7 @@ function SoundPlayerWithGain({ src }: SoundPlayerWithGainProps) {
 
   const setup = useCallback<SketchProps['setup']>(
     (p5, canvasParentRef) => {
-      const cnv = p5.createCanvas(500, 500).parent(canvasParentRef)
+      const cnv = p5.createCanvas(p5.windowWidth, 500).parent(canvasParentRef)
       cnv.mousePressed(() => {
         if (!audioContext.current) {
           audioContext.current = new AudioContext()
@@ -52,7 +52,7 @@ function SoundPlayerWithGain({ src }: SoundPlayerWithGainProps) {
     p5.noStroke()
 
     // Draw play/pause button
-    const dim = p5.min(p5.width, p5.height)
+    const dim = p5.width
     if (audioContext.current && gainNode.current) {
       const volume = p5.abs(p5.mouseX - p5.width / 2) / (p5.width / 2)
       gainNode.current.gain.setTargetAtTime(
@@ -61,16 +61,23 @@ function SoundPlayerWithGain({ src }: SoundPlayerWithGainProps) {
         0.01
       )
       p5.rectMode(p5.CENTER)
-      p5.rect(p5.width / 2, p5.height / 2, dim * volume, dim * 0.05)
+      p5.rect(p5.width / 2, p5.height / 2, dim * volume, dim * 0.025)
     } else {
       drawPolygon({
         p5,
         point: { x: p5.width / 2, y: p5.height / 2 },
-        radius: dim * 0.1,
+        radius: dim * 0.05,
         sides: 3,
       })
     }
   }, [])
+
+  const resizeCanvas = useCallback<Required<SketchProps>['windowResized']>(
+    (p5) => {
+      p5.resizeCanvas(p5.windowWidth, 500)
+    },
+    []
+  )
 
   useEffect(() => {
     return () => {
@@ -80,7 +87,7 @@ function SoundPlayerWithGain({ src }: SoundPlayerWithGainProps) {
     }
   }, [])
 
-  return <Sketch setup={setup} draw={draw} />
+  return <Sketch setup={setup} draw={draw} windowResized={resizeCanvas} />
 }
 
 export default SoundPlayerWithGain
