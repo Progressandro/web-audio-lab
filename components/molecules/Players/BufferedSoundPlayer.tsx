@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import { useCallback, useEffect, useRef } from 'react'
 import { SketchProps } from 'react-p5/@types'
-import { drawPolygon } from '../../utils/graphics'
+import { drawPolygon } from '../../../utils/graphics'
 // Will only import `react-p5` on client-side
 const Sketch = dynamic(() => import('react-p5'), {
   ssr: false,

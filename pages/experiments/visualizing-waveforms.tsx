@@ -1,6 +1,6 @@
 import { Center } from '@chakra-ui/react'
 import BackLink from 'components/molecules/BackLink'
-import WaveformVisualizer from 'components/molecules/WaveformVisualizer'
+import WaveformVisualizer from 'components/molecules/Visualizers/WaveformVisualizer'
 import DefaultLayout from 'components/templates/DefaultLayout'
 import type { GetStaticProps, NextPage } from 'next'
 import { useTranslation } from 'next-i18next'

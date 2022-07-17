@@ -1,6 +1,6 @@
 import { Center } from '@chakra-ui/react'
 import BackLink from 'components/molecules/BackLink'
-import SoundPlayer from 'components/molecules/SoundPlayer'
+import SoundPlayer from 'components/molecules/Players/SoundPlayer'
 import DefaultLayout from 'components/templates/DefaultLayout'
 import type { GetStaticProps, NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
