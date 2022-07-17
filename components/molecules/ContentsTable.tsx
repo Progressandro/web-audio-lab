@@ -1,5 +1,5 @@
 import { ListItem, UnorderedList } from '@chakra-ui/react'
-import ContentLink from 'components/atoms/Text/ContentLink'
+import CommonLink from 'components/atoms/Text/CommonLink'
 
 export interface Content {
   title: string
@@ -20,7 +20,7 @@ function ContentsTable({
       <UnorderedList px={4}>
         {contents.map((content) => (
           <ListItem key={content.url} onClick={() => onContentClick(content)}>
-            <ContentLink>{content.title}</ContentLink>
+            <CommonLink>{content.title}</CommonLink>
           </ListItem>
         ))}
       </UnorderedList>

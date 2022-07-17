@@ -1,4 +1,4 @@
-import { Spacer, Stack } from '@chakra-ui/react'
+import { Stack } from '@chakra-ui/react'
 import Title from 'components/atoms/Text/Title'
 
 interface DefaultLayoutProps {
@@ -8,9 +8,8 @@ interface DefaultLayoutProps {
 
 function DefaultLayout({ children, title }: DefaultLayoutProps): JSX.Element {
   return (
-    <Stack w="full" h="full" p={8}>
+    <Stack w="full" h="full" p={8} spacing={3}>
       <Title>{title}</Title>
-      <Spacer dir="vertical" p={2} />
       {children}
     </Stack>
   )

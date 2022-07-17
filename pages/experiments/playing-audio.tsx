@@ -1,3 +1,6 @@
+import { Center } from '@chakra-ui/react'
+import BackLink from 'components/molecules/BackLink'
+import PlayerCanvas from 'components/organisms/PlayerCanvas'
 import DefaultLayout from 'components/templates/DefaultLayout'
 import type { GetStaticProps, NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
@@ -7,7 +10,10 @@ const Experiments: NextPage = () => {
   const { t } = useTranslation('experiments_playing-audio')
   return (
     <DefaultLayout title={t('title')}>
-      <h1>WIP</h1>
+      <Center>
+        <PlayerCanvas />
+      </Center>
+      <BackLink />
     </DefaultLayout>
   )
 }
