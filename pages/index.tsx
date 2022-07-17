@@ -13,6 +13,10 @@ const contents: Content[] = [
     title: 'Playing Audio',
     url: 'playing-audio',
   },
+  {
+    title: 'Buffering Audio',
+    url: 'buffering-audio',
+  },
 ]
 const Home: NextPage = () => {
   const { t } = useTranslation('common')
