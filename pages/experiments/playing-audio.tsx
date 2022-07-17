@@ -1,6 +1,6 @@
 import { Center } from '@chakra-ui/react'
 import BackLink from 'components/molecules/BackLink'
-import PlayerCanvas from 'components/organisms/PlayerCanvas'
+import SoundPlayer from 'components/molecules/SoundPlayer'
 import DefaultLayout from 'components/templates/DefaultLayout'
 import type { GetStaticProps, NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
@@ -11,7 +11,7 @@ const Experiments: NextPage = () => {
   return (
     <DefaultLayout title={t('title')}>
       <Center>
-        <PlayerCanvas />
+        <SoundPlayer src="/audio/piano.mp3" />
       </Center>
       <BackLink />
     </DefaultLayout>

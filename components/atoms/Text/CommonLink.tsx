@@ -5,7 +5,7 @@ function CommonLink({
   ...chakraProps
 }: TextProps & { children: React.ReactNode }) {
   return (
-    <Text size="md" as="u" cursor="pointer" {...chakraProps}>
+    <Text as="u" cursor="pointer" {...chakraProps}>
       {children}
     </Text>
   )
