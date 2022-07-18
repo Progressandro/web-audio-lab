@@ -122,6 +122,7 @@ function FrequencyVisualizer({ src }: FrequencyVisualizerProps) {
       p5.noFill()
 
       for (const freq of FREQUENCIES) {
+        p5.fill(freq.color)
         p5.stroke(freq.color)
         const freqDrawData = audioSignal({
           p5,
