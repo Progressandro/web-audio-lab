@@ -29,6 +29,10 @@ const contents: Content[] = [
     title: 'Meter',
     url: 'meter',
   },
+  {
+    title: 'Frequency Analysis',
+    url: 'frequency-analysis',
+  },
 ]
 const Home: NextPage = () => {
   const { t } = useTranslation('common')
